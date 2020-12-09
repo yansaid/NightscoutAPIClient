@@ -159,6 +159,7 @@ public class NightscoutAPIManager: CGMManager {
                 }
 
                 self.latestBackfill = newGlucose.first
+                self.glucoseDisplay = newGlucose.first
 
                 self.delegateQueue.async {
                     guard !newSamples.isEmpty else {
