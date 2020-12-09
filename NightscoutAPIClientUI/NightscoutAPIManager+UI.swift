@@ -15,11 +15,14 @@ import NightscoutAPIClient
 extension NightscoutAPIManager: CGMManagerUI {
     
     public static func setupViewController(glucoseTintColor: Color, guidanceColors: GuidanceColors) -> (UIViewController & CGMManagerSetupViewController & CompletionNotifying)? {
-        return NightscoutAPISetupViewController()
+        let setupVC = NightscoutAPISetupViewController()
+        return setupVC
     }
     
     public func settingsViewController(for glucoseUnit: HKUnit, glucoseTintColor: Color, guidanceColors: GuidanceColors) -> (UIViewController & CompletionNotifying) {
-        return NightscoutAPISettingsViewController(cgmManager: self, glucoseUnit: glucoseUnit)
+        let settings = NightscoutAPISettingsViewController(cgmManager: self, glucoseUnit: glucoseUnit)
+        let nav = SettingsNavigationViewController(rootViewController: settings)
+        return nav
     }
 
     public var smallImage: UIImage? { nil }

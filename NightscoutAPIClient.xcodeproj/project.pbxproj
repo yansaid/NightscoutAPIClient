@@ -99,6 +99,7 @@
 		2CD7A64C25808D6E0029E4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD7A65525808DE60029E4BB /* OSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		2CD7A684258091B60029E4BB /* LoopKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKitUI.framework; path = Carthage/Build/iOS/LoopKitUI.framework; sourceTree = "<group>"; };
+		2CD7A6B825809B040029E4BB /* copy-frameworks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "copy-frameworks.sh"; sourceTree = "<group>"; };
 		384D8EFA236085C300B1DD29 /* NightscoutAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightscoutAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		384D8F0A23608A4400B1DD29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		384D8F0D23608BEA00B1DD29 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +194,14 @@
 			path = NightscoutAPIClientPlugin;
 			sourceTree = "<group>";
 		};
+		2CD7A6B725809B040029E4BB /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7A6B825809B040029E4BB /* copy-frameworks.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		38D9A6482413C0870099AAF0 /* KalmanFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				38F613B3234F313A003FB95D /* Cartfile */,
+				2CD7A6B725809B040029E4BB /* Scripts */,
 				38F613BC234F3E47003FB95D /* Common */,
 				38F6139B234F3066003FB95D /* NightscoutAPIClient */,
 				38E30FB62358C25000DAB3A0 /* NightscoutAPIClientUI */,
@@ -330,6 +340,7 @@
 				2CD7A64425808D6E0029E4BB /* Sources */,
 				2CD7A64525808D6E0029E4BB /* Frameworks */,
 				2CD7A64625808D6E0029E4BB /* Resources */,
+				2CD7A6B925809B730029E4BB /* Copy Frameworks with Carthage */,
 			);
 			buildRules = (
 			);
@@ -512,6 +523,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CD7A6B925809B730029E4BB /* Copy Frameworks with Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/NightscoutAPIClient.framework",
+				"$(BUILT_PRODUCTS_DIR)/NightscoutAPIClientUI.framework",
+			);
+			name = "Copy Frameworks with Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${SRCROOT}/Scripts/copy-frameworks.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CD7A64425808D6E0029E4BB /* Sources */ = {

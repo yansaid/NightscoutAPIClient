@@ -44,5 +44,4 @@ final class NightscoutAPISetupViewController: UINavigationController, CGMManager
         setupDelegate?.cgmManagerSetupViewController(self, didSetUpCGMManager: cgmManager)
         completionDelegate?.completionNotifyingDidComplete(self)
     }
-
 }
