@@ -21,7 +21,7 @@ class NightscoutAPIClientPlugin: NSObject, LoopUIPlugin {
     }
     
     public var cgmManagerType: CGMManagerUI.Type? {
-        return NightscoutAPIClient.self
+        return NightscoutAPIManager.self
     }
     
     override init() {
