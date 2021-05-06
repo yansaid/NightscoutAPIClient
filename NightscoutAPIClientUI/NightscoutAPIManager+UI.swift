@@ -14,16 +14,21 @@ import NightscoutAPIClient
 
 extension NightscoutAPIManager: CGMManagerUI {
     
-    public static func setupViewController(glucoseTintColor: Color, guidanceColors: GuidanceColors) -> (UIViewController & CGMManagerSetupViewController & CompletionNotifying)? {
+    public static func setupViewController(bluetoothProvider: BluetoothProvider, colorPalette: LoopUIColorPalette) -> SetupUIResult<UIViewController & CGMManagerCreateNotifying & CGMManagerOnboardNotifying & CompletionNotifying, CGMManagerUI> {
         let setupVC = NightscoutAPISetupViewController()
-        return setupVC
+        return .userInteractionRequired(setupVC)
     }
     
-    public func settingsViewController(for glucoseUnit: HKUnit, glucoseTintColor: Color, guidanceColors: GuidanceColors) -> (UIViewController & CompletionNotifying) {
-        let settings = NightscoutAPISettingsViewController(cgmManager: self, glucoseUnit: glucoseUnit)
-        let nav = SettingsNavigationViewController(rootViewController: settings)
+    public func settingsViewController(for displayGlucoseUnitObservable: DisplayGlucoseUnitObservable, bluetoothProvider: BluetoothProvider, colorPalette: LoopUIColorPalette) -> (UIViewController & CGMManagerOnboardNotifying & CompletionNotifying) {
+        let settings =  NightscoutAPISettingsViewController(cgmManager: self, displayGlucoseUnitObservable: displayGlucoseUnitObservable)
+        let nav = CGMManagerSettingsNavigationViewController(rootViewController: settings)
         return nav
     }
+    
+    public var cgmStatusBadge: DeviceStatusBadge? {
+        nil
+    }
+
 
     public var smallImage: UIImage? { nil }
     

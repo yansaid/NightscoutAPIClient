@@ -12,7 +12,7 @@ import NightscoutAPIClient
 import NightscoutAPIClientUI
 import os.log
 
-class NightscoutAPIClientPlugin: NSObject, LoopUIPlugin {
+class NightscoutAPIClientPlugin: NSObject, CGMManagerUIPlugin {
     
     private let log = OSLog(category: "NightscoutAPIClientPlugin")
     

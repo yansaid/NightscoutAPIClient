@@ -18,15 +18,19 @@ public final class NightscoutAPISettingsViewController: UIHostingController<Sett
 
     public let cgmManager: NightscoutAPIManager
 
-    public let glucoseUnit: HKUnit
+    private let displayGlucoseUnitObservable: DisplayGlucoseUnitObservable
+
+    private var glucoseUnit: HKUnit {
+        displayGlucoseUnitObservable.displayGlucoseUnit
+    }
 
     private var viewModel: SettingsViewModel
 
     private var lifetime: AnyCancellable?
 
-    public init(cgmManager: NightscoutAPIManager, glucoseUnit: HKUnit) {
+    public init(cgmManager: NightscoutAPIManager, displayGlucoseUnitObservable: DisplayGlucoseUnitObservable) {
         self.cgmManager = cgmManager
-        self.glucoseUnit = glucoseUnit
+        self.displayGlucoseUnitObservable = displayGlucoseUnitObservable
         self.viewModel = SettingsViewModel(
             url: cgmManager.nightscoutService.url?.absoluteString ?? "",
             upload: cgmManager.shouldSyncToRemoteService,

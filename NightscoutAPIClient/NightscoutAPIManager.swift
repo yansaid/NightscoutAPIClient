@@ -11,6 +11,14 @@ import HealthKit
 import Combine
 
 public class NightscoutAPIManager: CGMManager {
+    public var cgmManagerStatus: CGMManagerStatus  {
+        return CGMManagerStatus(hasValidSensorSession: true)
+    }
+    
+    public var localizedTitle: String = LocalizedString("Nightscout CGM", comment: "Title for the CGMManager option")
+    
+    public var isOnboarded: Bool = true
+    
     public var glucoseDisplay: GlucoseDisplayable?
     
     public enum CGMError: String, Error {
@@ -23,7 +31,7 @@ public class NightscoutAPIManager: CGMManager {
         static let filterNoise = 2.5
     }
 
-    public static var managerIdentifier = "NightscoutAPIClient"
+    public var managerIdentifier = "NightscoutAPIClient"
 
     public init() {
         nightscoutService = NightscoutAPIService(keychainManager: keychain)
@@ -51,8 +59,6 @@ public class NightscoutAPIManager: CGMManager {
             keychain.setNightscoutCgmURL(nightscoutService.url)
         }
     }
-
-    public static var localizedTitle = LocalizedString("Nightscout CGM", comment: "Title for the CGMManager option")
 
     public let delegate = WeakSynchronizedDelegate<CGMManagerDelegate>()
 

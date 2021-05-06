@@ -1,35 +1,35 @@
 {
-  "commitish" : "bda828f1116a162672cb4cebf52e91d79a5c58af",
+  "commitish" : "ac51fc2f4c18170fafa0bb0ea3c69e2964247cd7",
   "iOS" : [
     {
-      "hash" : "4a54bf5348a9a19bb8651417a36490f2421a2de66567a5464154fed74f1dec6f",
+      "hash" : "d584e93c85303c8a846e916c072816915c51d3d436541314771c347cbfe7f075",
       "name" : "LoopKit",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
     },
     {
-      "hash" : "a5e58465fb7a2c215837c996a91c6546ada96a379a1b93ed5c550d56f0cab027",
+      "hash" : "ea231d0cf6b64778e511db1709d2a9b1600a5fc8c974d86f0ba1ec6aff774161",
       "name" : "LoopKitUI",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
     },
     {
-      "hash" : "ce06bca0f901817a98556230b61ae1ebf507d82f1741997eb8e89111231564ef",
+      "hash" : "734015453d290e81633566fea7dce5ac46fd8500f123cd33469f01d3fca09dd2",
       "name" : "LoopTestingKit",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
     },
     {
-      "hash" : "39c160c40783e7684df96d1e184ee5b5db32faadf156cc14b84d112c50817691",
+      "hash" : "e1a97c480e756bab56cca66c39d528f1d98921f204a76566c12e186d2a8692ff",
       "name" : "MockKit",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
     },
     {
-      "hash" : "4a17737464097b56fe3cf0a6a91b28c8fa3bc4cca06831410c8018c20b71c739",
+      "hash" : "85981eca2e901594880754b53a170940ea5a31e7c4fc433226ce9bbc89b9ad36",
       "name" : "MockKitUI",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
     }
   ]
 }
