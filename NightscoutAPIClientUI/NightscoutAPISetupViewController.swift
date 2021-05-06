@@ -42,6 +42,7 @@ final class NightscoutAPISetupViewController: UINavigationController, CGMManager
     }
 
     @objc private func save() {
+        cgmManagerCreateDelegate?.cgmManagerCreateNotifying(didCreateCGMManager: cgmManager)
         completionDelegate?.completionNotifyingDidComplete(self)
     }
 }
